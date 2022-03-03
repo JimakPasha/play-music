@@ -1,6 +1,8 @@
-import { Box } from '@mui/material'
+import { Grid } from '@mui/material'
+import { Box } from '@mui/system'
 import React from 'react'
 import { ITrack } from '../types/track'
+import TrackItem from './TrackItem'
 
 interface TrackListProps {
     tracks: ITrack[];
@@ -8,13 +10,15 @@ interface TrackListProps {
 
 const TrackList: React.FC<TrackListProps> = ({tracks}) => {
   return (
-    <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
-        {tracks.map(({_id, name, artist, text}) => {
+    <Grid container direction="column">
+      <Box p={2}>
+        {tracks.map((track) => {
             return (
-                <div key={_id}>{text}</div>
+              <TrackItem key={track._id} track={track}/>
             )
         })}
-    </Box>
+      </Box>
+    </Grid>
   )
 }
 

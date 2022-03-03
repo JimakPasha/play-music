@@ -1,0 +1,26 @@
+.track {
+	padding: 15px;
+	margin: 15px;
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+
+	&__wrapper {
+		width: 200px;
+		margin: 0 30px;
+	}
+
+	&__artist {
+		font-size: 12px;
+		color: grey;
+	}
+
+	&__details {
+		font-size: 14px;
+		color: #1976d2;
+	}
+
+	&__delete {
+		margin-left: auto;
+	}
+}
